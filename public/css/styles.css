@@ -202,6 +202,8 @@ ion-icon[name="checkmark-circle"] {
 
 .congrats, .almost {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: row;
     margin: 10px 0 10px 0;
 }
@@ -219,7 +221,9 @@ ion-icon[name="checkmark-circle"] {
 
 
 
-
+.show {
+    display: block;
+}
 .hide {
     display: none;
 }

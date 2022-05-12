@@ -29,6 +29,7 @@ export default function Questions(props) {
         setIcon("help-circle");
         props.setChangeIcon([...props.changeIcon, "help-circle"]);
         props.setContador(props.contador + 1)
+        console.log(props.contador)
     }
 
     function clickZap (){

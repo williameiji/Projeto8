@@ -1,42 +1,22 @@
 import React from "react";
 import Decks from "./Decks";
+import Result from "./Result";
 
-function Congrats(props) {
-    return (
-        <div className>
-            <div className="congrats">
-                <img src="./images/party.png" alt="" />
-                <h3>Parabéns</h3>
-            </div>
-            <p>Você não esqueceu de nenhum flashcard!</p>
-        </div>
-    )
-}
 
-function Almost(props) {
-    return (
-        <div className>
-            <div className="almost">
-                <img src="./images/sad.png" alt="" />
-                <h3>Putz...</h3>
-            </div>
-            <p>Ainda faltam alguns... Mas não desanime!</p>
-        </div>
-    )
-}
 
 export default function Body() {
-    const [inicial, setInicial] = React.useState("screenInicial hide");
-    const [decks, setDecks] = React.useState("screenDecks ");
+    const [inicial, setInicial] = React.useState("screenInicial");
+    const [decks, setDecks] = React.useState("screenDecks hide");
+    const [hideResul, setHideResul] = React.useState("botDeck hide");
     const [changeIcon, setChangeIcon] = React.useState([]);
-    const [contador, setContador] = React.useState(0)
-
+    const [contador, setContador] = React.useState(0);
+    
 
     function changeScreen() {
         setInicial("screenInicial hide");
         setDecks("screenDecks");
+        setHideResul("botDeck");
     }
-
 
     return (
         <>
@@ -56,13 +36,7 @@ export default function Body() {
 
             </div>
 
-            <div className="botDeck">
-
-                {changeIcon.length}/8 CONCLUÍDOS
-                <div>
-                    {changeIcon.map((item, index) => <ion-icon key={index} name={item}></ion-icon>)}
-                </div>
-            </div>
+            <Result changeIcon={changeIcon} contador={contador} hideResul={hideResul}/>
         </>
     )
 }
