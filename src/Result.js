@@ -1,20 +1,35 @@
 import React from "react";
 import { useEffect } from "react";
 
-export default function Result({ changeIcon, contador, hideResul }) {
+
+export default function Result({ changeIcon, contador, setChangeIcon, setContador, setInit }) {
     const [result, setResult] = React.useState("hide");
     const [result1, setResult1] = React.useState("hide");
+    const [reset, setReset] = React.useState("restart hide")
 
     useEffect(() => {
-        if(contador === 8 && changeIcon.length === 8){
+        if (contador === 8 && changeIcon.length === 8) {
             setResult("show");
-        }else if(contador !== 8 && changeIcon.length === 8){
+            setReset("restart");
+        } else if (contador !== 8 && changeIcon.length === 8) {
             setResult1("show");
+            setReset("restart");
         }
     });
-    
+
+    function resetApp() {
+
+        setResult("hide");
+        setResult1("hide");
+        setChangeIcon([]);
+        setContador(0);
+        setInit(false);
+
+    }
+
+
     return (
-        <div className={hideResul}>
+        <div className="botDeck">
 
             <div className={result}>
                 <div className="congrats">
@@ -36,6 +51,7 @@ export default function Result({ changeIcon, contador, hideResul }) {
             <div>
                 {changeIcon.map((item, index) => <ion-icon key={index} name={item}></ion-icon>)}
             </div>
+            <div className={reset} onClick={resetApp}>REINICIAR RECALL</div>
         </div>
     )
 }

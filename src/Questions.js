@@ -4,6 +4,8 @@ export default function Questions(props) {
     const [classQuestions, setClassQuestions] = React.useState("questions");
     const [classQuestion, setClassQuestion] = React.useState("question hide");
     const [classAnswer, setClassAnswer] = React.useState("answers hide");
+    
+    
     const [icon, setIcon] = React.useState("play-outline");
     
     function clickQuestion() {
@@ -20,7 +22,7 @@ export default function Questions(props) {
         setClassQuestions("questions colorRed");
         setClassAnswer("answers hide");
         setIcon("close-circle");
-        props.setChangeIcon([...props.changeIcon, "close-circle"])
+        props.setChangeIcon([...props.changeIcon, "close-circle"]);
     }
 
     function clickOrange(){
@@ -28,16 +30,15 @@ export default function Questions(props) {
         setClassAnswer("answers hide");
         setIcon("help-circle");
         props.setChangeIcon([...props.changeIcon, "help-circle"]);
-        props.setContador(props.contador + 1)
-        console.log(props.contador)
+        props.setContador(props.contador + 1);
     }
 
     function clickZap (){
         setClassQuestions("questions colorZap");
         setClassAnswer("answers hide");
         setIcon("checkmark-circle");
-        props.setChangeIcon([...props.changeIcon, "checkmark-circle"])
-        props.setContador(props.contador + 1)
+        props.setChangeIcon([...props.changeIcon, "checkmark-circle"]);
+        props.setContador(props.contador + 1);
     }
 
     return (

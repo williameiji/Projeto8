@@ -173,18 +173,18 @@ h4 {
     background: #2FBE34;
 }
 
-.questions.colorRed { 
-    color:#FF3030;
+.questions.colorRed {
+    color: #FF3030;
     text-decoration: line-through;
 }
 
-.questions.colorOrange { 
-    color:#FF922E;
+.questions.colorOrange {
+    color: #FF922E;
     text-decoration: line-through;
 }
 
-.questions.colorZap { 
-    color:#2FBE34;
+.questions.colorZap {
+    color: #2FBE34;
     text-decoration: line-through;
 }
 
@@ -193,14 +193,16 @@ ion-icon[name="close-circle"] {
 }
 
 ion-icon[name="help-circle"] {
-    color: #FF922E;;
+    color: #FF922E;
+    ;
 }
 
 ion-icon[name="checkmark-circle"] {
     color: #2FBE34;
 }
 
-.congrats, .almost {
+.congrats,
+.almost {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -208,7 +210,8 @@ ion-icon[name="checkmark-circle"] {
     margin: 10px 0 10px 0;
 }
 
-.congrats h3, .almost h3 {
+.congrats h3,
+.almost h3 {
     margin-left: 5px;
     font-weight: bold;
 }
@@ -219,11 +222,24 @@ ion-icon[name="checkmark-circle"] {
     margin-bottom: 10px;
 }
 
+.restart {
+    width: 167px;
+    height: 32px;
+    background: #FB6B6B;
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
 
 
 .show {
     display: block;
 }
+
 .hide {
     display: none;
 }
