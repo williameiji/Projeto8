@@ -39,6 +39,7 @@ export default function Questions(props) {
         setIcon("checkmark-circle");
         props.setChangeIcon([...props.changeIcon, "checkmark-circle"]);
         props.setContador(props.contador + 1);
+        props.setContZap(props.contZap + 1);
     }
 
     return (

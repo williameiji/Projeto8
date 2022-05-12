@@ -2,10 +2,11 @@ import React from "react";
 import Decks from "./Decks";
 import Result from "./Result";
 
-export default function Body({setInit}) {
+export default function Body({setInit, input}) {
     const [changeIcon, setChangeIcon] = React.useState([]);
     const [contador, setContador] = React.useState(0);
-
+    const [contZap, setContZap] = React.useState(0);
+    console.log(contZap)
 
     return (
         <>
@@ -15,11 +16,11 @@ export default function Body({setInit}) {
                     <h1>ZapRecall</h1>
                 </div>
 
-                <Decks setChangeIcon={setChangeIcon} changeIcon={changeIcon} setContador={setContador} contador={contador} />
+                <Decks setChangeIcon={setChangeIcon} changeIcon={changeIcon} setContador={setContador} contador={contador} setContZap={setContZap} contZap={contZap} />
 
             </div>
 
-            <Result changeIcon={changeIcon} contador={contador} setChangeIcon={setChangeIcon} setContador={setContador} setInit={setInit} />
+            <Result changeIcon={changeIcon} contador={contador} setInit={setInit} input={input} contZap={contZap} />
         </>
     )
 }

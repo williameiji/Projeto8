@@ -1,32 +1,24 @@
 import React from "react";
 import { useEffect } from "react";
 
-
-export default function Result({ changeIcon, contador, setChangeIcon, setContador, setInit }) {
+export default function Result({ changeIcon, contador, setInit, input, contZap }) {
     const [result, setResult] = React.useState("hide");
     const [result1, setResult1] = React.useState("hide");
     const [reset, setReset] = React.useState("restart hide")
 
     useEffect(() => {
-        if (contador === 8 && changeIcon.length === 8) {
+        if (contador === 8 && contZap >= input && changeIcon.length === 8) {
             setResult("show");
             setReset("restart");
-        } else if (contador !== 8 && changeIcon.length === 8) {
+        } else if ((contador !== 8 || contZap < input) && changeIcon.length === 8) {
             setResult1("show");
             setReset("restart");
         }
     });
 
     function resetApp() {
-
-        setResult("hide");
-        setResult1("hide");
-        setChangeIcon([]);
-        setContador(0);
         setInit(false);
-
     }
-
 
     return (
         <div className="botDeck">
