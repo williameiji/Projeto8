@@ -46,6 +46,18 @@ h1 {
     color: #666666;
 }
 
+select:required:invalid {
+    color: #666666;
+}
+
+option[value=""][disabled] {
+    display: none;
+}
+
+option {
+    color: black;
+}
+
 .topDecks {
     display: flex;
     align-items: center;
@@ -240,7 +252,8 @@ ion-icon[name="checkmark-circle"] {
     color: white;
 }
 
-input {
+input,
+select {
     width: 240px;
     height: 43px;
     margin-top: 35px;
@@ -251,6 +264,9 @@ input {
     border: 0;
 }
 
+.ok {
+    pointer-events: none; 
+}
 
 .show {
     display: block;

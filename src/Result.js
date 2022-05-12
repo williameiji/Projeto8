@@ -4,7 +4,7 @@ import { useEffect } from "react";
 export default function Result({ changeIcon, contador, setInit, input, contZap }) {
     const [result, setResult] = React.useState("hide");
     const [result1, setResult1] = React.useState("hide");
-    const [reset, setReset] = React.useState("restart hide")
+    const [reset, setReset] = React.useState("restart hide");
 
     useEffect(() => {
         if (contador === 8 && contZap >= input && changeIcon.length === 8) {
@@ -45,5 +45,5 @@ export default function Result({ changeIcon, contador, setInit, input, contZap }
             </div>
             <div className={reset} onClick={resetApp}>REINICIAR RECALL</div>
         </div>
-    )
+    );
 }

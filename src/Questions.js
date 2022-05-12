@@ -4,37 +4,35 @@ export default function Questions(props) {
     const [classQuestions, setClassQuestions] = React.useState("questions");
     const [classQuestion, setClassQuestion] = React.useState("question hide");
     const [classAnswer, setClassAnswer] = React.useState("answers hide");
-    
-    
     const [icon, setIcon] = React.useState("play-outline");
-    
+
     function clickQuestion() {
         setClassQuestions("questions hide");
         setClassQuestion("question");
     }
 
-    function clickAnswer (){
+    function clickAnswer() {
         setClassQuestion("question hide");
         setClassAnswer("answers");
     }
 
-    function clickRed (){
-        setClassQuestions("questions colorRed");
+    function clickRed() {
+        setClassQuestions("questions colorRed ok");
         setClassAnswer("answers hide");
         setIcon("close-circle");
         props.setChangeIcon([...props.changeIcon, "close-circle"]);
     }
 
-    function clickOrange(){
-        setClassQuestions("questions colorOrange");
+    function clickOrange() {
+        setClassQuestions("questions colorOrange ok");
         setClassAnswer("answers hide");
         setIcon("help-circle");
         props.setChangeIcon([...props.changeIcon, "help-circle"]);
         props.setContador(props.contador + 1);
     }
 
-    function clickZap (){
-        setClassQuestions("questions colorZap");
+    function clickZap() {
+        setClassQuestions("questions colorZap ok");
         setClassAnswer("answers hide");
         setIcon("checkmark-circle");
         props.setChangeIcon([...props.changeIcon, "checkmark-circle"]);
@@ -53,7 +51,7 @@ export default function Questions(props) {
                 <p>
                     {props.question}
                 </p>
-                <img src="./images/setinha.png" alt="" onClick={clickAnswer}/>
+                <img src="./images/setinha.png" alt="" onClick={clickAnswer} />
             </div>
 
             <div className={classAnswer}>
@@ -65,5 +63,5 @@ export default function Questions(props) {
                 </div>
             </div>
         </>
-    )
+    );
 }
