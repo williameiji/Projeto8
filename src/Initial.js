@@ -3,9 +3,9 @@ import { useEffect } from "react";
 import arrQuestions from "./shared/arrQuestions";
 import logo from "./assets/images/logo.png"
 
-function Input({ setInput }) {
+function Input({ disInput, setInput }) {
     return (
-        <input type="text" placeholder="Digite sua meta de zaps..." onInput={e => setInput(e.target.value)}></input>
+        <input className={disInput} type="text" placeholder="Digite sua meta de zaps..." onInput={e => setInput(e.target.value)}></input>
     );
 }
 
@@ -34,17 +34,15 @@ function ButtonInput({ classButton, btnDisable, clickInput }) {
     );
 }
 
-export default function Initial({ setInit, input, setInput, setSelectDeck, selectDeck }) {
-    const [btnDisable, setBtnDisable] = React.useState(true);
-    const [classButton, setClassButton] = React.useState("button disabled");
+export default function Initial({ setInit, input, setInput, setSelectDeck, selectDeck, setBtnDisable, setClassButton, classButton, btnDisable, disInput, setDisInput }) {
     const [changeInput, setChangeInput] = React.useState(true);
     const [changeButton, setChangeButton] = React.useState(true);
 
     useEffect(() => {
-        if (input > "0" || input <= "8") {
+        if (Number(input) >= 1 && Number(input) <= 8) {
+            setDisInput("ok");
             setBtnDisable(false);
             setClassButton("button");
-
         }
     });
 
@@ -64,7 +62,7 @@ export default function Initial({ setInit, input, setInput, setSelectDeck, selec
             <img src={logo} alt="" />
             <h1>ZapRecall</h1>
 
-            {changeInput ? <Input setInput={setInput} /> : <SelectOption setSelectDeck={setSelectDeck} />}
+            {changeInput ? <Input disInput={disInput} setInput={setInput} /> : <SelectOption setSelectDeck={setSelectDeck} />}
 
             {changeButton ? <ButtonInput classButton={classButton} btnDisable={btnDisable} clickInput={clickInput} /> : <ButtonInit clickInit={clickInit} />}
         </div>

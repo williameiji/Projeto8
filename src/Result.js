@@ -3,22 +3,27 @@ import { useEffect } from "react";
 import sad from "./assets/images/sad.png"
 import party from "./assets/images/party.png"
 
-export default function Result({ changeIcon, contador, setInit, input, contZap }) {
+export default function Result({ changeIcon, setInit, input, contZap, setBtnDisable, setClassButton, setDisInput, setInput, setSelectDeck }) {
     const [result, setResult] = React.useState("hide");
     const [result1, setResult1] = React.useState("hide");
     const [reset, setReset] = React.useState("restart hide");
 
     useEffect(() => {
-        if (contador === 8 && contZap >= input && changeIcon.length === 8) {
+        if (contZap >= input && changeIcon.length === 8) {
             setResult("show");
             setReset("restart");
-        } else if ((contador !== 8 || contZap < input) && changeIcon.length === 8) {
+        } else if (contZap < input && changeIcon.length === 8) {
             setResult1("show");
             setReset("restart");
         }
     });
 
     function resetApp() {
+        setSelectDeck();
+        setInput(0);
+        setDisInput("");
+        setBtnDisable(true);
+        setClassButton("button disabled");
         setInit(false);
     }
 
