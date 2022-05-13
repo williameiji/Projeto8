@@ -1,5 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
+import sad from "./assets/images/sad.png"
+import party from "./assets/images/party.png"
 
 export default function Result({ changeIcon, contador, setInit, input, contZap }) {
     const [result, setResult] = React.useState("hide");
@@ -25,7 +27,7 @@ export default function Result({ changeIcon, contador, setInit, input, contZap }
 
             <div className={result}>
                 <div className="congrats">
-                    <img src="./images/party.png" alt="" />
+                    <img src={party} alt="" />
                     <h3>Parabéns</h3>
                 </div>
                 <p>Você não esqueceu de nenhum flashcard!</p>
@@ -33,7 +35,7 @@ export default function Result({ changeIcon, contador, setInit, input, contZap }
 
             <div className={result1}>
                 <div className="almost">
-                    <img src="./images/sad.png" alt="" />
+                    <img src={sad} alt="" />
                     <h3>Putz...</h3>
                 </div>
                 <p>Ainda faltam alguns... Mas não desanime!</p>

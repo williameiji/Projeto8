@@ -1,4 +1,5 @@
 import React from "react";
+import setinha from "./assets/images/setinha.png"
 
 export default function Questions(props) {
     const [classQuestions, setClassQuestions] = React.useState("questions");
@@ -51,7 +52,7 @@ export default function Questions(props) {
                 <p>
                     {props.question}
                 </p>
-                <img src="./images/setinha.png" alt="" onClick={clickAnswer} />
+                <img src={setinha} alt="" onClick={clickAnswer} />
             </div>
 
             <div className={classAnswer}>

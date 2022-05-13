@@ -1,3 +1,5 @@
+import "./assets/css/reset.css"
+import "./assets/css/styles.css"
 import React from "react";
 import Body from "./Body";
 import Initial from "./Initial";

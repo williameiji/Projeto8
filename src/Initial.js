@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import arrQuestions from "./shared/arrQuestions";
+import logo from "./assets/images/logo.png"
 
 function Input({ setInput }) {
     return (
@@ -60,7 +61,7 @@ export default function Initial({ setInit, input, setInput, setSelectDeck, selec
 
     return (
         <div className="screenInicial">
-            <img src="./images/logo.png" alt="" />
+            <img src={logo} alt="" />
             <h1>ZapRecall</h1>
 
             {changeInput ? <Input setInput={setInput} /> : <SelectOption setSelectDeck={setSelectDeck} />}
