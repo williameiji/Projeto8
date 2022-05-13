@@ -15,8 +15,8 @@ function SelectOption({ setSelectDeck }) {
     };
 
     return (
-        <select required onChange={handleChange}>
-            <option value="" disabled selected>Escolha seu deck</option>
+        <select required onChange={handleChange} defaultValue="">
+            <option value="" disabled >Escolha seu deck</option>
             {arrQuestions.map((item, index) => <option key={index} value={index}>{item.name}</option>)}
         </select>
     );

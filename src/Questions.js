@@ -1,46 +1,52 @@
 import React from "react";
 import setinha from "./assets/images/setinha.png"
 
-function QuestionsIn({ numQuestions, icon, classQuestions, clickQuestion }) {
+function QuestionsIn({ numQuestions, icon, setclickQuestions, setclickQuestion, classQuestions }) {
     return (
-        <div className={classQuestions} onClick={clickQuestion}>
+        <div className={classQuestions} onClick={() => (setclickQuestions(false), setclickQuestion(true))}>
             <h4>Pergunta {numQuestions + 1}</h4>
             <ion-icon name={icon}></ion-icon>
         </div>
     )
 }
 
-function QuestionIn({ question, classQuestion, clickAnswer }) {
+function QuestionIn({ question, setclickQuestion, setclickAnswer }) {
     return (
-        <div className={classQuestion}>
+        <div className="question">
             <p>
                 {question}
             </p>
-            <img src={setinha} alt="" onClick={clickAnswer} />
+            <img src={setinha} alt="" onClick={() => (setclickQuestion(false), setclickAnswer(true))} />
+        </div>
+    )
+}
+
+function AnswerIn({ answer, clickColor }) {
+    return (
+        <div className="answers">
+            {answer}
+            <div className="boxAnswers">
+                <div className="red" onClick={() => clickColor("questions colorRed ok", "close-circle")}>Não lembrei</div>
+                <div className="orange" onClick={() => clickColor("questions colorOrange ok", "help-circle")}>Quase não lembrei</div>
+                <div className="zap" onClick={() => clickColor("questions colorZap ok", "checkmark-circle")}>Zap!</div>
+            </div>
         </div>
     )
 }
 
 export default function Questions(props) {
     const [classQuestions, setClassQuestions] = React.useState("questions");
-    const [classQuestion, setClassQuestion] = React.useState("question hide");
-    const [classAnswer, setClassAnswer] = React.useState("answers hide");
     const [icon, setIcon] = React.useState("play-outline");
+    const [clickQuestions, setclickQuestions] = React.useState(true);
+    const [clickQuestion, setclickQuestion] = React.useState(false);
+    const [clickAnswer, setclickAnswer] = React.useState(false);
 
-    function clickQuestion() {
-        setClassQuestions("questions hide");
-        setClassQuestion("question");
-    }
-
-    function clickAnswer() {
-        setClassQuestion("question hide");
-        setClassAnswer("answers");
-    }
 
     function clickColor(color, icon) {
+        setclickQuestions(true);
         setClassQuestions(color);
         setIcon(icon)
-        setClassAnswer("answers hide");
+        setclickAnswer(false);
         props.setChangeIcon([...props.changeIcon, icon]);
         if (color === "questions colorZap ok") {
             props.setContZap(props.contZap + 1);
@@ -49,18 +55,11 @@ export default function Questions(props) {
 
     return (
         <>
-            <QuestionsIn numQuestions={props.numQuestion} icon={icon} classQuestions={classQuestions} clickQuestion={clickQuestion} />
+            {clickQuestions ? <QuestionsIn setclickQuestions={setclickQuestions} numQuestions={props.numQuestion} icon={icon} setclickQuestion={setclickQuestion} classQuestions={classQuestions} /> : null}
 
-            <QuestionIn question={props.question} classQuestion={classQuestion} clickAnswer={clickAnswer} />
+            {clickQuestion ? <QuestionIn question={props.question} setclickQuestion={setclickQuestion} setclickAnswer={setclickAnswer} /> : null}
 
-            <div className={classAnswer}>
-                {props.answer}
-                <div className="boxAnswers">
-                    <div className="red" onClick={() => clickColor("questions colorRed ok", "close-circle")}>Não lembrei</div>
-                    <div className="orange" onClick={() => clickColor("questions colorOrange ok", "help-circle")}>Quase não lembrei</div>
-                    <div className="zap" onClick={() => clickColor("questions colorZap ok", "checkmark-circle")}>Zap!</div>
-                </div>
-            </div>
+            {clickAnswer ? <AnswerIn answer={props.answer} clickColor={clickColor} /> : null}
         </>
     );
 }

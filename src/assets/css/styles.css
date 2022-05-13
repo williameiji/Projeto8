@@ -12,6 +12,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 150px;
+    width: 100%;
 }
 
 h1 {
@@ -266,12 +267,4 @@ select {
 
 .ok {
     pointer-events: none; 
-}
-
-.show {
-    display: block;
-}
-
-.hide {
-    display: none;
 }

@@ -7,7 +7,7 @@ import Initial from "./Initial";
 export default function App() {
     const [init, setInit] = React.useState(false);
     const [input, setInput] = React.useState(0);
-    const [disInput, setDisInput] = React.useState("")
+    const [disInput, setDisInput] = React.useState("");
     const [selectDeck, setSelectDeck] = React.useState();
     const [btnDisable, setBtnDisable] = React.useState(true);
     const [classButton, setClassButton] = React.useState("button disabled");
