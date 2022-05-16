@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
-import sad from "./assets/images/sad.png"
-import party from "./assets/images/party.png"
+import sad from "./assets/images/sad.png";
+import party from "./assets/images/party.png";
 
 function Congrats() {
     return (
@@ -27,7 +27,7 @@ function Almost() {
     );
 }
 
-function Restart ({resetApp}) {
+function Restart({ resetApp }) {
     return (
         <div className="restart" onClick={resetApp}>REINICIAR RECALL</div>
     );
@@ -60,9 +60,9 @@ export default function Result({ changeIcon, setInit, input, contZap, setBtnDisa
     return (
         <div className="botDeck">
 
-            {result ? <Congrats /> : null }
+            {result ? <Congrats /> : null}
 
-            {result1 ? <Almost /> : null }
+            {result1 ? <Almost /> : null}
 
             {changeIcon.length}/8 CONCLUÍDOS
             <div>
@@ -70,7 +70,7 @@ export default function Result({ changeIcon, setInit, input, contZap, setBtnDisa
             </div>
 
             {reset ? <Restart resetApp={resetApp} /> : null}
-            
+
         </div>
     );
 }

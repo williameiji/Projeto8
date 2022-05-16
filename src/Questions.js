@@ -1,5 +1,5 @@
 import React from "react";
-import setinha from "./assets/images/setinha.png"
+import setinha from "./assets/images/setinha.png";
 
 function QuestionsIn({ numQuestions, icon, setclickQuestions, setclickQuestion, classQuestions }) {
     return (
@@ -7,7 +7,7 @@ function QuestionsIn({ numQuestions, icon, setclickQuestions, setclickQuestion, 
             <h4>Pergunta {numQuestions + 1}</h4>
             <ion-icon name={icon}></ion-icon>
         </div>
-    )
+    );
 }
 
 function QuestionIn({ question, setclickQuestion, setclickAnswer }) {
@@ -18,7 +18,7 @@ function QuestionIn({ question, setclickQuestion, setclickAnswer }) {
             </p>
             <img src={setinha} alt="" onClick={() => (setclickQuestion(false), setclickAnswer(true))} />
         </div>
-    )
+    );
 }
 
 function AnswerIn({ answer, clickColor }) {
@@ -31,7 +31,7 @@ function AnswerIn({ answer, clickColor }) {
                 <div className="zap" onClick={() => clickColor("questions colorZap ok", "checkmark-circle")}>Zap!</div>
             </div>
         </div>
-    )
+    );
 }
 
 export default function Questions(props) {
@@ -45,7 +45,7 @@ export default function Questions(props) {
     function clickColor(color, icon) {
         setclickQuestions(true);
         setClassQuestions(color);
-        setIcon(icon)
+        setIcon(icon);
         setclickAnswer(false);
         props.setChangeIcon([...props.changeIcon, icon]);
         if (color === "questions colorZap ok") {

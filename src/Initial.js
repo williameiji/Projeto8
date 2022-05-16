@@ -5,7 +5,7 @@ import logo from "./assets/images/logo.png"
 
 function Input({ disInput, setInput }) {
     return (
-        <input className={disInput} type="text" placeholder="Digite sua meta de zaps..." onInput={e => setInput(e.target.value)}></input>
+        <input className={disInput} type="text" placeholder="Digite sua meta de zaps entre 1 e 8..." onInput={e => setInput(e.target.value)}></input>
     );
 }
 
