@@ -1,34 +1,44 @@
-# ZapRecall
+# <p align = "center"> ZapRecall Frontend </p>
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/86417618/173111591-cb9ee85a-3c88-4cd3-81b2-3c973c943729.gif">
 </div>
 
-
-## About
+##  :clipboard: Description
 
 A project (for mobile) made in React to help you memorize some topics and help you study.
 
 Check project running [here](https://projeto8-williameiji.vercel.app)
 
+***
 
-## Built With
+## :computer:	 Technologies and Concepts
 
-<img align="left" alt="css3" width="50px" src="https://user-images.githubusercontent.com/86417618/173111082-08db0001-1f48-40b1-ad7b-78c7c2b86f8d.svg" />
-<img align="left" alt="javascript" width="50px" src="https://user-images.githubusercontent.com/86417618/173069712-169e17ab-559e-47db-9336-5b41e79cc3fc.svg" />
-<img align="left" alt="react" width="50px" src="https://user-images.githubusercontent.com/86417618/173069718-dde7a6ef-d599-4154-abd8-badca30cc3bf.svg" />
+- ReactJS
+- Axios
+- Node.js
+- JavaScript
+- CSS
 
-<br />
-<br />
+***
 
-## Installing
+## 🏁 Running the application
 
-**Cloning the Repository**
+This project was started with the [React](reactjs.org), so make sure you have the latest stable version of [Node.js](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/) running locally.
+
+
+First, clone this repository on your machine:
 ```
 $ git clone https://github.com/williameiji/zap-recall.git
 ```
 
-**Installing dependencies**
+Then, inside the folder, run the following command to install the dependencies.
+
 ```
-$ npm install
+npm install
+```
+
+Finished the process, just start the server
+```
+npm start
 ```
